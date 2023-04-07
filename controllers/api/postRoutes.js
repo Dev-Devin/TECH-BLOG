@@ -8,7 +8,7 @@ router.post("/", withAuth, async (req, res) => {
     const postData = await Post.create({
       title: req.body.title,
       contents: req.body.contents,
-      user_id: req.body.user_id,
+      user_id: req.session.user_id,
     });
     res.status(200).json(postData);
   } catch (err) {
