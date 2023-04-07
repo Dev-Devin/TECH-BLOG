@@ -1,11 +1,11 @@
 <div class="post-detail-card">
   <div class="post-card-header">
-    <h2 class="post-detail-title">{{title}}</h2>
-    <h3 class="post-detail-username">{{user.username}}</h3>
-    <h4 class="post-detail-date">{{format_date date_created}}</h4>
+    <h2 class="post-detail-title">{{post.title}}</h2>
+    <h3 class="post-detail-username">{{post.user.username}}</h3>
+    <h4 class="post-detail-date">{{format_date post.date_created}}</h4>
   </div>
   <div class="post-card-body">
-    <p class="post-detail-content">{{contents}}</p>
+    <p class="post-detail-content">{{post.contents}}</p>
   </div>
 </div>
  

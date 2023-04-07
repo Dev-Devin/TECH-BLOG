@@ -4,9 +4,8 @@ const { User, Post, Comment } = require("../../models");
 // GET all users (/api/users)
 router.get("/", async (req, res) => {
   try {
-    const dbUserData = await User.findAll({
-      attributes: { exclude: ["password"] },
-    }).then((dbUserData) => res.json(dbUserData));
+    const dbUserData = await User.findAll({});
+    res.json(dbUserData)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -73,6 +72,7 @@ router.post("/login", async (req, res) => {
         username: req.body.username,
       },
     });
+    console.log(dbUserData);
     // .then(dbUserData => {
     if (!dbUserData) {
       res
